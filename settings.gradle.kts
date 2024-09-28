@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "MyDogApp"
 include(":app")
+include(":ui_utils")
+include(":navigation")
