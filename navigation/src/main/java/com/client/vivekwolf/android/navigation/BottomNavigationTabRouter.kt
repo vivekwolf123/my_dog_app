@@ -12,11 +12,11 @@ sealed class BottomNavigationTabRouter(
     val route: String
 ) {
     data object DogInfoScreen :
-        BottomNavigationTabRouter("Account", Icons.Filled.AccountCircle, "DogInfoScreen")
+        BottomNavigationTabRouter("Info", Icons.Filled.AccountCircle, "DogInfoScreen")
 
     data object DogActivityScreen :
-        BottomNavigationTabRouter("Items", Icons.Filled.Create, "DogActivityScreen")
+        BottomNavigationTabRouter("Activity", Icons.Filled.Create, "DogActivityScreen")
 
     data object DogFactsScreen :
-        BottomNavigationTabRouter("Cart", Icons.Filled.Info, "DogFactsScreen")
+        BottomNavigationTabRouter("Facts", Icons.Filled.Info, "DogFactsScreen")
 }

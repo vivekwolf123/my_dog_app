@@ -28,4 +28,12 @@ dependencies {
 
     implementation(project(":ui_utils"))
     implementation(project(":navigation"))
+    implementation(project(":feature_home"))
+    implementation(project(":feature_dog_activity"))
+    implementation(project(":feature_dog_facts"))
+    implementation(project(":feature_dog_info"))
+    implementation(project(":feature_tabs"))
+    implementation(project(":core_dog_domain"))
+    implementation(project(":core_dog_data"))
+    implementation(project(":core_base"))
 }
