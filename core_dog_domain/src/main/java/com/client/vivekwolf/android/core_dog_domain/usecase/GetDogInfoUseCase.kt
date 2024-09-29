@@ -16,18 +16,20 @@ class GetDogInfoUseCase @Inject constructor(private val dogDataRepository: DogDa
         return dogDataRepository.getDogInfo().map { result ->
             when (result) {
                 is DataResult.Success -> {
-                    val dogInfoModels = EntityToModelMapper(
-                        entityClass = DogInfoEntity::class,
-                        fromEntity = { entity: DogInfoEntity ->
-                            DogInfoModel(
-                                name = entity.name,
-                                age = entity.age,
-                                race = entity.race,
-                                gender = entity.gender,
-                                weight = entity.weight
-                            )
-                        }
-                    ).mapEntityToModel(result.data) as List<DogInfoModel>
+                    val dogInfoModels = result.data?.let {
+                        EntityToModelMapper(
+                            entityClass = DogInfoEntity::class,
+                            fromEntity = { entity: DogInfoEntity ->
+                                DogInfoModel(
+                                    name = entity.name,
+                                    age = entity.age,
+                                    race = entity.race,
+                                    gender = entity.gender,
+                                    weight = entity.weight
+                                )
+                            }
+                        ).mapEntityToModel(it)
+                    } as List<DogInfoModel>
 
                     DataResult.Success(dogInfoModels)
                 }

@@ -25,6 +25,9 @@ dependencies {
     implementation(libs.compose.ui)
     implementation(libs.lifecycle.runtime.compose)
     implementation(libs.coil)
+
     implementation(project(":ui_utils"))
     implementation(project(":navigation"))
+    implementation(project(":core_dog_domain"))
+    implementation(project(":feature_base"))
 }

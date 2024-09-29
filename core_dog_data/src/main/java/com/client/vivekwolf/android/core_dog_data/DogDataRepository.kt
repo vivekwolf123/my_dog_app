@@ -7,5 +7,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface DogDataRepository {
 
-    suspend fun getDogInfo(): Flow<DataResult<List<DogInfoEntity>, ErrorType>>
+    suspend fun storeDogInfo(dogInfoEntity: List<DogInfoEntity>): Flow<DataResult<List<DogInfoEntity>?, ErrorType>>
+
+    suspend fun getDogInfo(): Flow<DataResult<List<DogInfoEntity>?, ErrorType>>
 }
